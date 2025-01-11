@@ -2824,6 +2824,9 @@ begin
   MaskFPUExceptions(PyIDEOptions.MaskFPUExceptions);
 
   // Set Python engine
+  PyIDEOptions.InternalInterpreterHidden := False;
+  PyIDEOptions.PythonEngineType := peInternal;
+
   actPythonInternal.Visible := not PyIDEOptions.InternalInterpreterHidden;
   if not actPythonInternal.Visible and
      (PyIDEOptions.PythonEngineType = peInternal)

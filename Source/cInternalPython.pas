@@ -281,7 +281,7 @@ function TInternalPython.LoadPython(const Version: TPythonVersion): Boolean;
 var
   Path, NewPath: string;
 begin
-  DestroyPythonComponents;
+  //DestroyPythonComponents; // this is redundant
 
   CreatePythonComponents;
   try

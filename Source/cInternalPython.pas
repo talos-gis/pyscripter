@@ -65,6 +65,7 @@ type
 
 var
   CreateExternalModules: procedure(PyEngine: TPythonEngine) = nil;
+  PythonLoadDLLHook: procedure(PyEngine: TPythonEngine) = nil;
 
 implementation
 
@@ -302,7 +303,10 @@ begin
     // Repeat here to make sure it is set right
     MaskFPUExceptions(PyIDEOptions.MaskFPUExceptions);
 
-    PythonEngine.LoadDll;
+    if assigned(PythonLoadDLLHook) then
+      PythonLoadDLLHook(PythonEngine)
+    else
+      PythonEngine.LoadDll;
     Result := PythonEngine.IsHandleValid;
     if Result then
       Initialize

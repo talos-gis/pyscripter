@@ -1528,7 +1528,6 @@ type
 procedure TPyIDEMainForm.FormCreate(Sender: TObject);
 var
   TabHost: TJvDockTabHostForm;
-  LocalOptionsFileName: string;
 begin
   // Shell Images
   FShellImages := TCommonVirtualImageList.Create(Self);
@@ -1568,9 +1567,7 @@ begin
   AppStorage.FileName := TPyScripterSettings.OptionsFileName;
 
   // LocalAppStorage
-  LocalOptionsFileName := ChangeFileExt(TPath.GetFileName(Application.ExeName), '.local.ini');
-  LocalAppStorage.FileName :=
-    TPyScripterSettings.UserDataPath + LocalOptionsFileName;
+  LocalAppStorage.FileName := ChangeFileExt(TPyScripterSettings.OptionsFileName, '.local.ini');
 
   //OutputDebugString(PWideChar(Format('%s ElapsedTime %d ms', ['Before All Forms', StopWatch.ElapsedMilliseconds])));
   // Create and layout IDE windows

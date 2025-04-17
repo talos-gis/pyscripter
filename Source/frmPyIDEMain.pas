@@ -1379,6 +1379,7 @@ const
 
 var
   PyIDEMainForm: TPyIDEMainForm;
+  PyScripterInitedAsync: Boolean = True;
 
 implementation
 
@@ -3823,7 +3824,10 @@ begin
   DragAcceptFiles(TabControl1.Handle, True);
   DragAcceptFiles(TabControl2.Handle, True);
 
-  TThread.ForceQueue(nil, FormShowDelayedActions, 1000);
+  if PyScripterInitedAsync then
+    TThread.ForceQueue(nil, FormShowDelayedActions, 1000)
+  else
+    FormShowDelayedActions;
   //OutputDebugString(PWideChar(Format('%s ElapsedTime %d ms', ['FormShow end', StopWatch.ElapsedMilliseconds])));
 end;
 

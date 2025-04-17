@@ -14,6 +14,10 @@ function GetEXEPath: String;
 function GetAppRootPath: String;
 function GetAppName: String;
 
+const
+  PyScripterVersion: String = '5.3.1';
+var
+  PyScripterIsEmbedded: Boolean;
 
 implementation
 
@@ -46,7 +50,7 @@ end;
 
 procedure InitPaths;
 var
-  DirName: String;
+  DirName, PyScripterDirName: String;
 begin
   AppName := TPath.GetFileNameWithoutExtension(Application.ExeName);
   EXEPath := ExtractFilePath(Application.ExeName);
@@ -59,6 +63,13 @@ begin
     AppRootPath := ExtractFilePath(ExcludeTrailingPathDelimiter(EXEPath))
   else
     AppRootPath := EXEPath;
+
+  PyScripterIsEmbedded := LowerCase(AppName) <> 'pyscripter';
+  if PyScripterIsEmbedded then begin
+    AppName := 'PyScripter';
+    PyScripterDirName := AppName + '-' + PyScripterVersion;
+    AppRootPath := IncludeTrailingPathDelimiter(AppRootPath + PyScripterDirName);
+  end;
 end;
 
 initialization

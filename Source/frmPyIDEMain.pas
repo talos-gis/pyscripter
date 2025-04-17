@@ -1175,6 +1175,9 @@ type
     SpTBXSeparatorItem29: TSpTBXSeparatorItem;
     mnTerminate: TSpTBXItem;
     mnRefactor: TSpTBXItem;
+    TBSeparatorItem1: TTBSeparatorItem;
+    mnAddMainFunctionCall: TSpTBXItem;
+    actAddMainFunctionCall: TAction;
     procedure mnFilesClick(Sender: TObject);
     procedure actEditorZoomInExecute(Sender: TObject);
     procedure actEditorZoomOutExecute(Sender: TObject);
@@ -1254,6 +1257,7 @@ type
     procedure UpdateFileActions(Sender: TObject);
     procedure UpdateRefactoringActions(Sender: TObject);
     procedure UpdateViewActions(Sender: TObject);
+    procedure actAddMainFunctionCallExecute(Sender: TObject);
   private
     FIsClosing: Boolean;
     FLanguageList: TStringList;
@@ -1662,6 +1666,11 @@ procedure TPyIDEMainForm.FormCloseQuery(Sender: TObject;
   end;
 
 begin
+  if PyScripterIsEmbedded then begin
+    CanClose := False;
+    Hide;
+    Exit;
+  end;
   if JvGlobalDockIsLoading then begin
     CanClose := False;
     DelayedClose;
@@ -2130,6 +2139,21 @@ begin
     Editor.SplitEditorHide;
     Editor.SynEdit.SetFocus;
   end;
+end;
+
+procedure AddIfNameEqMain(s: TStrings);
+begin
+  s.Add('');
+  s.Add('if __name__ == "__main__":');
+  s.Add('    print(main())');
+  s.Add('');
+end;
+
+procedure TPyIDEMainForm.actAddMainFunctionCallExecute(Sender: TObject);
+begin
+  var Editor := GetActiveEditor;
+  if Assigned(Editor) then
+    AddIfNameEqMain(TEditorForm(Editor.Form).SynEdit.Lines);
 end;
 
 function TPyIDEMainForm.GetActiveEditor: IEditor;
@@ -3853,7 +3877,10 @@ begin
   DragAcceptFiles(TabControl1.Handle, True);
   DragAcceptFiles(TabControl2.Handle, True);
 
-  TThread.ForceQueue(nil, FormShowDelayedActions, 1000);
+  if not PyScripterIsEmbedded then
+    TThread.ForceQueue(nil, FormShowDelayedActions, 1000)
+  else
+    FormShowDelayedActions;
   //OutputDebugString(PWideChar(Format('%s ElapsedTime %d ms', ['FormShow end', StopWatch.ElapsedMilliseconds])));
 end;
 

@@ -421,6 +421,11 @@ object PyIDEMainForm: TPyIDEMainForm
             ImageName = 'Execute'
             ShortCut = 16502
           end
+          object TBSeparatorItem1: TTBSeparatorItem
+          end
+          object mnAddMainFunctionCall: TSpTBXItem
+            Action = actAddMainFunctionCall
+          end
         end
         object SpTBXSeparatorItem10: TSpTBXSeparatorItem
         end
@@ -1803,6 +1808,10 @@ object PyIDEMainForm: TPyIDEMainForm
       ShortCut = 32864
       OnExecute = actEditorZoomResetExecute
       OnUpdate = UpdateViewActions
+    end
+    object actAddMainFunctionCall: TAction
+      Caption = 'Add main function call'
+      OnExecute = actAddMainFunctionCallExecute
     end
   end
   object LocalAppStorage: TJvAppIniFileStorage

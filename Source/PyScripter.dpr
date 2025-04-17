@@ -139,8 +139,8 @@ begin
 
   Application.MainFormOnTaskbar := True;
 
-  if TStyleManager.TrySetStyle('Windows11 MineShaft') then
-    TStyleSelectorForm.CurrentSkinName := 'Windows11 MineShaft';
+//  if TStyleManager.TrySetStyle('Windows11 MineShaft') then
+//    TStyleSelectorForm.CurrentSkinName := 'Windows11 MineShaft';
 
   Application.Title := 'PyScripter';
   Application.CreateForm(TResourcesDataModule, ResourcesDataModule);

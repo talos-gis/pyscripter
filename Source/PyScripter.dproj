@@ -52,7 +52,7 @@
         <Custom_Styles>&quot;Windows11 Impressive Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Impressive_Light.vsf&quot;;&quot;Windows11 MineShaft|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_MineShaft.vsf&quot;</Custom_Styles>
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_DependencyCheckOutputName>PyScripter.exe</DCC_DependencyCheckOutputName>
-        <DCC_ExeOutput>.\..</DCC_ExeOutput>
+        <DCC_ExeOutput>c:\delphi\git.bin\bin64</DCC_ExeOutput>
         <DCC_ImageBase>00400000</DCC_ImageBase>
         <DCC_MapFile>3</DCC_MapFile>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -109,6 +109,8 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
         <ILINK_MapFileType>DetailedSegments</ILINK_MapFileType>
         <MapFile>3</MapFile>
+        <Icon_MainIcon>PyScripter_Icon1.ico</Icon_MainIcon>
+        <Manifest_File>PyScripter.exe.manifest</Manifest_File>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -347,7 +349,10 @@ $(PostBuildEvent)]]></PostBuildEvent>
                 <Source>
                     <Source Name="MainSource">PyScripter.dpr</Source>
                 </Source>
-                <Excluded_Packages/>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
                 <VersionInfo>
                     <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
                     <VersionInfo Name="AutoIncBuild">False</VersionInfo>
@@ -392,36 +397,4 @@ $(PostBuildEvent)]]></PostBuildEvent>
     </ProjectExtensions>
     <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
-    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy &quot;$(BDS)\Redist\$(Platform)\WebView2Loader.dll&quot; $(OUTPUTDIR)</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win64'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy &quot;$(BDS)\Redist\$(Platform)\WebView2Loader.dll&quot; $(OUTPUTDIR)</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy &quot;$(BDS)\Redist\$(Platform)\WebView2Loader.dll&quot; $(OUTPUTDIR)</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy &quot;$(BDS)\Redist\$(Platform)\WebView2Loader.dll&quot; $(OUTPUTDIR)</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
 </Project>

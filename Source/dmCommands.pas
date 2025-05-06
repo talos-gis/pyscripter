@@ -1688,6 +1688,7 @@ begin
       GI_PyControl.ActiveInterpreter.StringsToSysPath(Paths);
   finally
     Paths.Free;
+    TJedi.CreateServer;
   end;
 end;
 

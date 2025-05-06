@@ -170,6 +170,8 @@ class procedure TJedi.Initialize;
 var
   ClientCapabilities: TJSONObject;     // Will be freed by Initialize
   InitializationOptions: TJSONObject;  // Will be freed by Initialize
+  python_path, init_str: string;
+  err: integer;
 const
    ClientCapabilitiesJson =
     '{"textDocument":{"documentSymbol":{"hierarchicalDocumentSymbolSupport":true}}}';
@@ -190,6 +192,9 @@ const
     '	  "jediSettings": {'#13#10 +
     '		"autoImportModules": [%s],'#13#10 +
     '		"caseInsensitiveCompletion": %s'#13#10 +
+    '	  },'#13#10 +
+    '   "workspace": {'#13#10 +
+    '       "extraPaths": [%s]'#13#10 +
     '	  }'#13#10 +
     '}';
 
@@ -204,17 +209,40 @@ const
     Result := string.Join(',', Arr);
   end;
 
+  function QuotePaths(Paths: TStringList): string;
+  begin
+    var Arr: TArray<String> := Paths.ToStringArray;
+    if Length(Arr) = 0 then Exit('');
+
+    for var I := 0 to Length(Arr) - 1 do
+      Arr[I] := '"' + ExcludeTrailingPathDelimiter(Trim(Arr[I])).Replace('\','\\') + '"';
+
+    Result := string.Join(',', Arr);
+  end;
+
+
 begin
   if LspClient.Status <> lspStarted then Exit;
 
   ClientCapabilities := TJSONObject.Create;
   ClientCapabilities.Parse(TEncoding.UTF8.GetBytes(ClientCapabilitiesJson), 0);
   InitializationOptions := TJSONObject.Create;
-  InitializationOptions.Parse(TEncoding.UTF8.GetBytes(
-    Format(InitializationOptionsLsp,
-    [BoolToStr(PyIDEOptions.CheckSyntaxAsYouType, True).ToLower,
-     QuotePackages(PyIDEOptions.SpecialPackages),
-     BoolToStr(not PyIDEOptions.CodeCompletionCaseSensitive, True).ToLower])), 0);
+
+  python_path := 'c:\\delphi\\talos\\talos_scripts';
+  var Paths := TStringList.Create;
+  PyControl.ActiveInterpreter.SysPathToStrings(Paths);
+
+  init_str := Format(InitializationOptionsLsp,
+    [
+      BoolToStr(PyIDEOptions.CheckSyntaxAsYouType, True).ToLower,
+      QuotePackages(PyIDEOptions.SpecialPackages),
+      BoolToStr(not PyIDEOptions.CodeCompletionCaseSensitive, True).ToLower,
+      //QuotePaths(Paths)
+      QuotePackages(python_path)
+    ]
+  );
+  Paths.Free;
+  err := InitializationOptions.Parse(TEncoding.UTF8.GetBytes(init_str), 0);
 
   LspClient.Initialize('PyScripter', ApplicationVersion, ClientCapabilities,
     InitializationOptions);

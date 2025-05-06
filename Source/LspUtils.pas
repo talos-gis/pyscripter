@@ -189,13 +189,16 @@ function LSPInitializeParams(const ClientName, ClientVersion: string;
   InitializationOptions: TJSONObject = nil): TJSONObject;
 var
   ClientInfo: TJSONObject;
+  RootUri: String;
 begin
   ClientInfo := TJSONObject.Create;
   ClientInfo.AddPair('name', TJSONString.Create(ClientName));
   ClientInfo.AddPair('version', TJSONString.Create(ClientVersion));
   Result := TJSONObject.Create;
   Result.AddPair('clientInfo', ClientInfo);
-  Result.AddPair('rootUri', TJSONNull.Create);
+  RootUri := 'file:///C:/delphi/talos/talos_scripts';
+  Result.AddPair('rootUri', TJSONString.Create(RootUri));
+  //Result.AddPair('rootUri', TJSONNull.Create);
   Result.AddPair('capabilities', ClientCapabilities);
   if Assigned(InitializationOptions) then
     Result.AddPair('initializationOptions', InitializationOptions);

@@ -1665,6 +1665,11 @@ procedure TPyIDEMainForm.FormCloseQuery(Sender: TObject;
   end;
 
 begin
+  if PyScripterIsEmbedded then begin
+    CanClose := False;
+    Hide;
+    Exit;
+  end;
   if JvGlobalDockIsLoading then begin
     CanClose := False;
     DelayedClose;

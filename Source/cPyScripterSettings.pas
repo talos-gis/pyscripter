@@ -415,6 +415,7 @@ var
   PyIDEOptions: TPythonIDEOptions;
   EditorOptions: TSynEditorOptionsContainer;
   EditorSearchOptions: TEditorSearchOptions;
+  PyScripterIsEmbedded: Boolean;
 
 implementation
 
@@ -1122,17 +1123,25 @@ class constructor TPyScripterSettings.CreateSettings;
 
 var
   PublicPath: string;
-  AppName, AppININame, EXEPath: string;
+  AppName, AppININame, EXEPath, AppRoot: string;
 begin
   AppName := TPath.GetFileNameWithoutExtension(Application.ExeName);
-  AppININame := AppName + '.ini';
   EXEPath := TPath.GetDirectoryName(Application.ExeName);
 
-  OptionsFileName := TPath.Combine(EXEPath, AppININame);
+  PyScripterIsEmbedded := LowerCase(AppName) <> 'pyscripter';
+  if PyScripterIsEmbedded then begin
+    AppININame := 'PyScripter' + '.ini';
+    AppRoot := TPath.Combine(TPath.GetDirectoryName(EXEPath), 'PyScripter');
+  end else begin
+    AppININame := AppName + '.ini';
+    AppRoot := EXEPath;
+  end;
+
+  OptionsFileName := TPath.Combine(AppRoot, AppININame);
   IsPortable := FileExists(OptionsFileName);
   if IsPortable then begin
     // Portable version - nothing is stored in other directories
-    UserDataPath := EXEPath;
+    UserDataPath := AppRoot;
     ColorThemesFilesDir := TPath.Combine(UserDataPath, 'Highlighters');
     StylesFilesDir := TPath.Combine(UserDataPath, 'Styles');
     LspServerPath :=  TPath.Combine(UserDataPath, 'Lib', 'Lsp');

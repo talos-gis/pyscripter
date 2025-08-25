@@ -1190,6 +1190,9 @@ type
     mnFreeThreaded: TSpTBXItem;
     EditorViewsMenu: TSpTBXSubmenuItem;
     spiSeparatorItem: TSpTBXSeparatorItem;
+    TBSeparatorItem1: TTBSeparatorItem;
+    mnAddMainFunctionCall: TSpTBXItem;
+    actAddMainFunctionCall: TAction;
     procedure mnFilesClick(Sender: TObject);
     procedure actEditorZoomInExecute(Sender: TObject);
     procedure actEditorZoomOutExecute(Sender: TObject);
@@ -1308,6 +1311,7 @@ type
     procedure lbStatusCaretClick(Sender: TObject);
     procedure mnSyntaxClick(Sender: TObject);
     procedure tbiReplaceTextExit(Sender: TObject);
+    procedure actAddMainFunctionCallExecute(Sender: TObject);
   private
     DSAAppStorage: TDSAAppStorage;
     ShellExtensionFiles: TStringList;
@@ -1438,7 +1442,6 @@ const
 
 var
   PyIDEMainForm: TPyIDEMainForm;
-  PyScripterInitedAsync: Boolean = True;
 
 implementation
 
@@ -2564,6 +2567,21 @@ begin
   var Editor := GetActiveEditor;
   if Assigned(Editor) then
     Editor.SplitEditorHide;
+end;
+
+procedure AddIfNameEqMain(s: TStrings);
+begin
+  s.Add('');
+  s.Add('if __name__ == "__main__":');
+  s.Add('    print(main())');
+  s.Add('');
+end;
+
+procedure TPyIDEMainForm.actAddMainFunctionCallExecute(Sender: TObject);
+begin
+  var Editor := GetActiveEditor;
+  if Assigned(Editor) then
+    AddIfNameEqMain(TEditorForm(Editor.Form).SynEdit.Lines);
 end;
 
 procedure TPyIDEMainForm.actAddWatchAtCursorExecute(Sender: TObject);
@@ -4419,7 +4437,7 @@ begin
   DragAcceptFiles(TabControl1.Handle, True);
   DragAcceptFiles(TabControl2.Handle, True);
 
-  if PyScripterInitedAsync then
+  if not PyScripterIsEmbedded then
     TThread.ForceQueue(nil, FormShowDelayedActions, 1000)
   else
     FormShowDelayedActions;

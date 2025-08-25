@@ -385,6 +385,11 @@ object PyIDEMainForm: TPyIDEMainForm
           object mnExecSelection: TSpTBXItem
             Action = actExecSelection
           end
+          object TBSeparatorItem1: TTBSeparatorItem
+          end
+          object mnAddMainFunctionCall: TSpTBXItem
+            Action = actAddMainFunctionCall
+          end
         end
         object SpTBXSeparatorItem10: TSpTBXSeparatorItem
         end
@@ -2195,6 +2200,10 @@ object PyIDEMainForm: TPyIDEMainForm
       Caption = 'Free-Threaded'
       Hint = 'Use the free-trheaded version of Python'
       OnExecute = actPythonFreeThreadedExecute
+    end
+    object actAddMainFunctionCall: TAction
+      Caption = 'Add main function call'
+      OnExecute = actAddMainFunctionCallExecute
     end
   end
   object LocalAppStorage: TJvAppIniFileStorage

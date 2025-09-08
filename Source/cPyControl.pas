@@ -47,7 +47,7 @@ type
     FInternalInterpreter: TPyBaseInterpreter;
     FActiveSSHServerName: string;
     FPythonHelpFile: string;
-    function InitPythonVersions: Boolean;
+    function InitPythonVersions(DLLPath: string = ''; ExpectedVersion: string = ''): Boolean;
     procedure SetActiveDebugger(const Value: TPyBaseDebugger);
     procedure SetActiveInterpreter(const Value: TPyBaseInterpreter);
     procedure SetDebuggerState(NewState: TDebuggerState);
@@ -121,6 +121,7 @@ type
 
 var
   PyControl: TPythonControl = nil;
+  DefaultPythonDLLPath: string = '';
 
 implementation
 
@@ -244,32 +245,33 @@ begin
   Result := InternalPython.Loaded and (FDebuggerState = dsInactive);
 end;
 
-function TPythonControl.InitPythonVersions: Boolean;
+function TPythonControl.InitPythonVersions(DLLPath: string; ExpectedVersion: string): Boolean;
 var
-  ExpectedVersion,
   LastVersion,
-  LastInstallPath,
-  DLLPath: string;
+  LastInstallPath: string;
   Version: TPythonVersion;
 begin
   // first find an optional parameter specifying the expected Python version in the form of -PYTHONXY
   ExpectedVersion := '';
 
-  if CmdLineReader.readFlag('PYTHON38') then
-    ExpectedVersion := '3.8'
-  else if CmdLineReader.readFlag('PYTHON39') then
-    ExpectedVersion := '3.9'
-  else if CmdLineReader.readFlag('PYTHON310') then
-    ExpectedVersion := '3.10'
-  else if CmdLineReader.readFlag('PYTHON311') then
-    ExpectedVersion := '3.11'
-  else if CmdLineReader.readFlag('PYTHON312') then
-    ExpectedVersion := '3.12'
-  else if CmdLineReader.readFlag('PYTHON313') then
-    ExpectedVersion := '3.13'
-  else if CmdLineReader.readFlag('PYTHON314') then
-    ExpectedVersion := '3.14';
-  DLLPath := CmdLineReader.readString('PYTHONDLLPATH');
+  if ExpectedVersion = '' then begin
+    if CmdLineReader.readFlag('PYTHON38') then
+      ExpectedVersion := '3.8'
+    else if CmdLineReader.readFlag('PYTHON39') then
+      ExpectedVersion := '3.9'
+    else if CmdLineReader.readFlag('PYTHON310') then
+      ExpectedVersion := '3.10'
+    else if CmdLineReader.readFlag('PYTHON311') then
+      ExpectedVersion := '3.11'
+    else if CmdLineReader.readFlag('PYTHON312') then
+      ExpectedVersion := '3.12'
+    else if CmdLineReader.readFlag('PYTHON313') then
+      ExpectedVersion := '3.13'
+    else if CmdLineReader.readFlag('PYTHON314') then
+      ExpectedVersion := '3.14';
+  end;
+  if DLLPath = '' then
+    DLLPath := CmdLineReader.readString('PYTHONDLLPATH');
 
   ReadFromAppStorage(GI_PyIDEServices.LocalAppStorage, LastVersion, LastInstallPath);
   if (DLLPath = '') and (ExpectedVersion = '') then
@@ -593,7 +595,7 @@ end;
 
 procedure TPythonControl.LoadPythonEngine;
 begin
-  if InitPythonVersions then
+  if InitPythonVersions(DefaultPythonDLLPath) then
     LoadPythonEngine(PythonVersion)
   else
     StyledMessageDlg(Format(_(SPythonLoadError), [MinPyVersion]), mtError, [mbOK], 0);

@@ -719,7 +719,8 @@ uses
   uEditAppIntfs,
   cFileTemplates,
   cPySupportTypes,
-  cAppPaths;
+  cAppPaths,
+  cInternalPython;
 
 const
   WM_FINDDEFINITION = WM_USER + 100;
@@ -1452,10 +1453,38 @@ end;
 type
   TTBCustomItemAccess = class(TTBCustomItem);
 
+
+function py42(self, args: PPYObject): PPYObject; cdecl;
+var
+  PyEngine: TPythonEngine;
+begin
+  PyEngine := GetPythonEngine;
+  Result := pyEngine.PyLong_FromLong(42);
+end;
+
+procedure DoRegister(PyEngine: TPythonEngine);
+{
+from mymodule import py42
+print(py42())
+print(py42.__doc__)
+}
+var
+  PyModule: TPythonModule;
+begin
+  PyModule := TPythonModule.Create(nil);
+
+  PyModule.Name := 'PyModule';
+  PyModule.ModuleName := 'mymodule';
+  PyModule.Engine := PyEngine;
+  PyModule.AddMethod(PAnsiChar('py42'),py42,PAnsiChar('returns forty two'));
+end;
+
 procedure TPyIDEMainForm.FormCreate(Sender: TObject);
 var
   TabHost: TJvDockTabHostForm;
 begin
+  //cInternalPython.CreateExternalModules := DoRegister;
+
   // Reduce CPU time spent on updating actions
   //Application.ActionUpdateDelay := 100;
   // Shell Images

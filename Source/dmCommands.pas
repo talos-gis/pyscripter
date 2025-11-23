@@ -3240,6 +3240,10 @@ begin
   // Syntax Parameter Completion
   SynParamCompletion.Font.Assign(PyIDEOptions.AutoCompletionFont);
 
+  // Force default Internal interpreter
+  PyIDEOptions.InternalInterpreterHidden := False;
+  PyIDEOptions.PythonEngineType := peInternal;
+
   // Set Python engine
   actPythonInternal.Visible := not PyIDEOptions.InternalInterpreterHidden;
   if not actPythonInternal.Visible and

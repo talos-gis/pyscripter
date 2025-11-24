@@ -5076,7 +5076,7 @@ msgstr "Stocker les chemins de fichiers relativement au répertoire du projet"
 #. ProjectExplorerWindow..ProjectActionList..actProjectShowFileExtensions..Caption
 #: frmProjectExplorer.dfm
 msgid "Show File &Extensions"
-msgstr "Montrer les fichiers &extensions"
+msgstr "Montrer les &extensions de fichiers"
 
 #. ProjectExplorerWindow..ProjectActionList..actProjectShowFileExtensions..Hint
 #: frmProjectExplorer.dfm

@@ -2303,7 +2303,7 @@ msgid ""
 "corresponding outlet."
 msgstr ""
 "Sélectionner une option autre que Aucun \n"
-"pour rediriger la sortie de \n"
+"pour rediriger la contenu vers \n"
 "la sortie correspondante."
 
 #. ToolProperties..Panel1..TabControl..tabProperties..GroupBox3..cbStandardOutput....Items.Strings

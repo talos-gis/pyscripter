@@ -5307,7 +5307,7 @@ msgstr "IDE &Windows"
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..sbmnNavigate..sbmnDebugWindows..Caption
 #: frmPyIDEMain.dfm
 msgid "&Debug Windows"
-msgstr "&Fenêtre de Débuggage"
+msgstr "Fenêtre de &Débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..sbmnViewEditor..mnSyntax..Caption
 #: frmPyIDEMain.dfm

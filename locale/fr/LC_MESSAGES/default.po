@@ -3866,7 +3866,7 @@ msgstr "&Stopper le débogage"
 #. CommandsDataModule..actlMain..actDebugAbort..Hint
 #: dmCommands.dfm
 msgid "Abort debugging"
-msgstr "Stopper le débuggage"
+msgstr "Stopper le débogage"
 
 #. CommandsDataModule..actlMain..actExternalRun..Caption
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectExternalRun..Caption

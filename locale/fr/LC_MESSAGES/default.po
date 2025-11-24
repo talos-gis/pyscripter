@@ -8505,7 +8505,7 @@ msgstr "Exécution de Script OK"
 #. Programmer's name for it: SDebuggingAborted
 #: StringResources.pas
 msgid "Debugging Aborted"
-msgstr "Stopper le débuggage"
+msgstr "Stopper le débogage"
 
 #. Programmer's name for it: StrCertainty
 #: StringResources.pas
@@ -9324,7 +9324,7 @@ msgstr "Projet"
 #. Programmer's name for it: SActionCategoryDebugWindows
 #: StringResources.pas
 msgid "Debug Windows"
-msgstr "Fenêtre de débuggage"
+msgstr "Fenêtre de débogage"
 
 #. Programmer's name for it: SActionCategoryIDENavigation
 #: StringResources.pas

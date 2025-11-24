@@ -3906,7 +3906,7 @@ msgstr "Exécuter le dernier script"
 #. CommandsDataModule..actlMain..actDebugLastScript..Caption
 #: dmCommands.dfm
 msgid "Debug Last Script"
-msgstr "Débugger le dernier Script"
+msgstr "Déboguer le Dernier Script"
 
 #. CommandsDataModule..actlMain..actDebugLastScript..Hint
 #. Programmer's name for it: SHintDebug

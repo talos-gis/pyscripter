@@ -4270,7 +4270,7 @@ msgstr "Cadre précédent"
 #. CallStackWindow..actlCallStack..actPreviousFrame..Hint
 #: frmCallStack.dfm
 msgid "Select previous (older) frame"
-msgstr "Sélectionner la frame précédente (ancienne)"
+msgstr "Sélectionner le cadre précédent (ancien)"
 
 #. CallStackWindow..actlCallStack..actNextFrame..Caption
 #: frmCallStack.dfm

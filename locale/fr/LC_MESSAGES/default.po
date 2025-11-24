@@ -7020,7 +7020,7 @@ msgstr "Nouveau nom"
 
 #: dmCommands.pas
 msgid "Debug"
-msgstr "Débugger"
+msgstr "Déboguer"
 
 #: dmCommands.pas
 msgid "Downloading..."

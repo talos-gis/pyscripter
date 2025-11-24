@@ -5197,7 +5197,7 @@ msgstr "Configuration d'exécution utilisant une console Python externe"
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectDebug..Hint
 #: frmProjectExplorer.dfm
 msgid "Debug the selected configuration"
-msgstr "Débugger la configuration sélectionnée"
+msgstr "Déboguer la configuration sélectionnée"
 
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectAddRemoteFile..Caption
 #. Programmer's name for it: SRemoteFileAdd

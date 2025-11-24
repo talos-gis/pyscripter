@@ -4877,7 +4877,7 @@ msgstr "&Edition"
 #. FunctionListWindow..Actions..actEditCopy..Hint
 #: frmFunctionList.dfm
 msgid "Copy procedures to clipboard"
-msgstr "Copier les procédures dans le presse-papiers"
+msgstr "Copier les procédures dans le presse-papier"
 
 #. FunctionListWindow..Actions..actOptionsFont..Caption
 #: frmFunctionList.dfm

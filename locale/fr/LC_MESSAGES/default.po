@@ -4003,17 +4003,17 @@ msgstr "Ré&initialiser le moteur Python"
 #. CommandsDataModule..actlMain..actPythonFreeThreaded..Caption
 #: dmCommands.dfm
 msgid "Free-Threaded"
-msgstr "Free-Threaded"
+msgstr "Exécution en parallèle"
 
 #. CommandsDataModule..actlMain..actPythonFreeThreaded..Hint
 #: dmCommands.dfm
 msgid "Use the free-trheaded version of Python"
-msgstr "Utiliser la version Python avec exécution parallèle"
+msgstr "Utiliser la version Python avec exécution en parallèle"
 
 #. CommandsDataModule..actlMain..actClearAllBreakpoints..Caption
 #: dmCommands.dfm
 msgid "Clear A&ll Breakpoints"
-msgstr "Effacer tous les points d'arrêts"
+msgstr "Effacer tous les points d'arrêt"
 
 #. CommandsDataModule..actlMain..actClearAllBreakpoints..Hint
 #: dmCommands.dfm

@@ -3800,7 +3800,7 @@ msgstr "Exécuter|Exécuter le module actif"
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectDebug..Caption
 #: dmCommands.dfm frmProjectExplorer.dfm
 msgid "&Debug"
-msgstr "&Debugger"
+msgstr "&Déboguer"
 
 #. CommandsDataModule..actlMain..actDebug..Hint
 #. Programmer's name for it: SDebugHint

@@ -3912,7 +3912,7 @@ msgstr "Déboguer le Dernier Script"
 #. Programmer's name for it: SHintDebug
 #: dmCommands.dfm StringResources.pas
 msgid "Debug last script"
-msgstr "Débugger le dernier script"
+msgstr "Déboguer le dernier script"
 
 #. CommandsDataModule..actlMain..actExternalRunLastScript..Caption
 #: dmCommands.dfm

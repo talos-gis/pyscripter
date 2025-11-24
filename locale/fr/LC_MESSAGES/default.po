@@ -8267,7 +8267,7 @@ msgid ""
 "programs"
 msgstr ""
 "Vous ne pouvez pas compiler, importer ou exécuter un modules lorsque qu'un "
-"programme est en cours d'exécution en mode normal ou en mode débuggage"
+"programme est en cours d'exécution en mode normal ou en mode débogage"
 
 #. Programmer's name for it: SErrorInImportingModule
 #: StringResources.pas

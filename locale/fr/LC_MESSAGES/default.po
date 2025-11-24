@@ -4280,7 +4280,7 @@ msgstr "Cadre suivant"
 #. CallStackWindow..actlCallStack..actNextFrame..Hint
 #: frmCallStack.dfm
 msgid "Select next (newer) frame"
-msgstr "Sélectionner le (nouveau) frame suivant"
+msgstr "Sélectionner le (nouveau) cadre suivant"
 
 #. CodeExplorerWindow..Caption
 #: frmCodeExplorer.dfm dmCommands.pas

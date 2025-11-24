@@ -3861,7 +3861,7 @@ msgstr "Mettre en pause le programme en cours d'exécution"
 #. CommandsDataModule..actlMain..actDebugAbort..Caption
 #: dmCommands.dfm
 msgid "&Abort Debugging"
-msgstr "&Stopper le debuggage"
+msgstr "&Stopper le débogage"
 
 #. CommandsDataModule..actlMain..actDebugAbort..Hint
 #: dmCommands.dfm

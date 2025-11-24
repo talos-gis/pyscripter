@@ -4023,7 +4023,7 @@ msgstr "Effacer tous les points d'arrêt"
 #. CommandsDataModule..actlMain..actToggleBreakPoint..Caption
 #: dmCommands.dfm
 msgid "Toggle &breakpoint"
-msgstr "Point d'&Arrêt"
+msgstr "Activer/Désactiver le point d'&arrêt"
 
 #. CommandsDataModule..actlMain..actToggleBreakPoint..Hint
 #: dmCommands.dfm

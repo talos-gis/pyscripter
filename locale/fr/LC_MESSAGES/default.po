@@ -4892,7 +4892,7 @@ msgstr "Configurer la police"
 #. FunctionListWindow..Actions..actViewStart..Caption
 #: frmFunctionList.dfm
 msgid "S&tart"
-msgstr "Démar&rer"
+msgstr "Déma&rrer"
 
 #. FunctionListWindow..Actions..actViewStart..Hint
 #: frmFunctionList.dfm

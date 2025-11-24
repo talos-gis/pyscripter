@@ -2237,7 +2237,7 @@ msgid ""
 "If checked output lines that look like messages \n"
 "will be parsed and shown in the messages window."
 msgstr ""
-"Les lignes de sorties sont cochées, qui ressemblent à des messages, \n"
+"Si cochée, les lignes en sortie qui ressemblent à des messages\n"
 "seront analysées et affichées dans la fenêtre des messages."
 
 #. ToolProperties..Panel1..TabControl..tabProperties..GroupBox3..cbParseMessages..Caption

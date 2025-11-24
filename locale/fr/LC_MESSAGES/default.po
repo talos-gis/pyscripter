@@ -4661,7 +4661,7 @@ msgstr "Dossier Parent|Afficher le dossier parent"
 #. UnitTestWindow..DialogActions..actRefresh..Caption
 #: frmFileExplorer.dfm frmFindResults.dfm frmToDo.dfm frmUnitTests.dfm
 msgid "&Refresh"
-msgstr "&Rafraichier"
+msgstr "&Rafraîchir"
 
 #. FileExplorerWindow..FileExplorerActions..actRefresh..Hint
 #: frmFileExplorer.dfm

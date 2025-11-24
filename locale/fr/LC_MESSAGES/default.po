@@ -4013,7 +4013,7 @@ msgstr "Utiliser la version Python avec exécution en parallèle"
 #. CommandsDataModule..actlMain..actClearAllBreakpoints..Caption
 #: dmCommands.dfm
 msgid "Clear A&ll Breakpoints"
-msgstr "Effacer tous les points d'arrêt"
+msgstr "Effacer tous les points d'&arrêt"
 
 #. CommandsDataModule..actlMain..actClearAllBreakpoints..Hint
 #: dmCommands.dfm

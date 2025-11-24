@@ -3135,7 +3135,7 @@ msgstr "Aller à la position du &débogueur"
 #. CommandsDataModule..actlMain..actSearchGoToDebugLine..Hint
 #: dmCommands.dfm
 msgid "Go to the current position of the debugger"
-msgstr "Aller à la position actuelle du débugger"
+msgstr "Aller à la position actuelle du débogueur"
 
 #. CommandsDataModule..actlMain..actHelpWebProjectHome..Caption
 #: dmCommands.dfm

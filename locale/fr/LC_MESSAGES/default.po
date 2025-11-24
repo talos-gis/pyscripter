@@ -2237,7 +2237,7 @@ msgid ""
 "If checked output lines that look like messages \n"
 "will be parsed and shown in the messages window."
 msgstr ""
-"Les lignes de sorties sont cochées, qui ressemblent à des messages, \n"
+"Si cochée, les lignes en sortie qui ressemblent à des messages\n"
 "seront analysées et affichées dans la fenêtre des messages."
 
 #. ToolProperties..Panel1..TabControl..tabProperties..GroupBox3..cbParseMessages..Caption
@@ -2303,7 +2303,7 @@ msgid ""
 "corresponding outlet."
 msgstr ""
 "Sélectionner une option autre que Aucun \n"
-"pour rediriger la sortie de \n"
+"pour rediriger la contenu vers \n"
 "la sortie correspondante."
 
 #. ToolProperties..Panel1..TabControl..tabProperties..GroupBox3..cbStandardOutput....Items.Strings
@@ -3195,7 +3195,7 @@ msgstr "Repliage du code"
 #. CommandsDataModule..actlMain..actFoldVisible..Hint
 #: dmCommands.dfm
 msgid "Show/Hide Code Folding"
-msgstr "Montrer/Caché le code replié"
+msgstr "Montrer/Cacher le code replié"
 
 #. CommandsDataModule..actlMain..actFoldAll..Caption
 #. CommandsDataModule..actlMain..actUnfoldAll..Caption
@@ -4003,17 +4003,17 @@ msgstr "Ré&initialiser le moteur Python"
 #. CommandsDataModule..actlMain..actPythonFreeThreaded..Caption
 #: dmCommands.dfm
 msgid "Free-Threaded"
-msgstr "Free-Threaded"
+msgstr "Exécution en parallèle"
 
 #. CommandsDataModule..actlMain..actPythonFreeThreaded..Hint
 #: dmCommands.dfm
 msgid "Use the free-trheaded version of Python"
-msgstr "Utiliser la version Python avec exécution parallèle"
+msgstr "Utiliser la version Python avec exécution en parallèle"
 
 #. CommandsDataModule..actlMain..actClearAllBreakpoints..Caption
 #: dmCommands.dfm
 msgid "Clear A&ll Breakpoints"
-msgstr "Effacer tous les points d'arrêts"
+msgstr "Effacer tous les points d'&arrêt"
 
 #. CommandsDataModule..actlMain..actClearAllBreakpoints..Hint
 #: dmCommands.dfm
@@ -4023,7 +4023,7 @@ msgstr "Effacer tous les points d'arrêt"
 #. CommandsDataModule..actlMain..actToggleBreakPoint..Caption
 #: dmCommands.dfm
 msgid "Toggle &breakpoint"
-msgstr "Point d'&Arrêt"
+msgstr "Activer/Désactiver le point d'&arrêt"
 
 #. CommandsDataModule..actlMain..actToggleBreakPoint..Hint
 #: dmCommands.dfm
@@ -4244,7 +4244,7 @@ msgstr "Co&pier dans le presse-papier"
 #. WatchesWindow..TBXPopupMenu..mnCopyToClipboard..Hint
 #: frmBreakPoints.dfm frmWatches.dfm
 msgid "Copy to clipboard"
-msgstr "Copier dans le presse-papiers"
+msgstr "Copier dans le presse-papier"
 
 #. CallStackWindow..Caption
 #: frmCallStack.dfm
@@ -4270,7 +4270,7 @@ msgstr "Cadre précédent"
 #. CallStackWindow..actlCallStack..actPreviousFrame..Hint
 #: frmCallStack.dfm
 msgid "Select previous (older) frame"
-msgstr "Sélectionner la frame précédente (ancienne)"
+msgstr "Sélectionner le cadre précédent (ancien)"
 
 #. CallStackWindow..actlCallStack..actNextFrame..Caption
 #: frmCallStack.dfm
@@ -4280,7 +4280,7 @@ msgstr "Cadre suivant"
 #. CallStackWindow..actlCallStack..actNextFrame..Hint
 #: frmCallStack.dfm
 msgid "Select next (newer) frame"
-msgstr "Sélectionner le (nouveau) frame suivant"
+msgstr "Sélectionner le (nouveau) cadre suivant"
 
 #. CodeExplorerWindow..Caption
 #: frmCodeExplorer.dfm dmCommands.pas
@@ -4416,7 +4416,7 @@ msgstr "Interrompre l'outil en cours d'exécution (Dangereux)"
 #. Programmer's name for it: SDisassemblyTab
 #: frmDisassemlyView.dfm StringResources.pas
 msgid "Disassembly"
-msgstr "Desassembler"
+msgstr "Désassembler"
 
 #. DocForm..Caption
 #. Programmer's name for it: SyntaxElementFriendlyName_Documentation
@@ -4661,7 +4661,7 @@ msgstr "Dossier Parent|Afficher le dossier parent"
 #. UnitTestWindow..DialogActions..actRefresh..Caption
 #: frmFileExplorer.dfm frmFindResults.dfm frmToDo.dfm frmUnitTests.dfm
 msgid "&Refresh"
-msgstr "&Rafraichier"
+msgstr "&Rafraîchir"
 
 #. FileExplorerWindow..FileExplorerActions..actRefresh..Hint
 #: frmFileExplorer.dfm
@@ -4877,7 +4877,7 @@ msgstr "&Edition"
 #. FunctionListWindow..Actions..actEditCopy..Hint
 #: frmFunctionList.dfm
 msgid "Copy procedures to clipboard"
-msgstr "Copier les procédures dans le presse-papiers"
+msgstr "Copier les procédures dans le presse-papier"
 
 #. FunctionListWindow..Actions..actOptionsFont..Caption
 #: frmFunctionList.dfm

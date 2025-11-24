@@ -5091,7 +5091,7 @@ msgstr "Chemin &Python supplémentaire..."
 #. ProjectExplorerWindow..ProjectActionList..actProjectExpandAll..Hint
 #: frmProjectExplorer.dfm
 msgid "Expand all project nodes"
-msgstr "Développer tous les noeuds de projet"
+msgstr "Ouvrir tous les nœuds du projet"
 
 #. ProjectExplorerWindow..ProjectActionList..actProjectCollapseAll..Hint
 #: frmProjectExplorer.dfm

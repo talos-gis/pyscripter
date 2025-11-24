@@ -5429,7 +5429,7 @@ msgstr "Définir la mise en page du débogage"
 #. PyIDEMainForm..actlStandard..actLayoutDebug..Hint
 #: frmPyIDEMain.dfm
 msgid "Set the current layout as the debug layout"
-msgstr "Définir la mise en page actuelle comme la mise en page de débuggage"
+msgstr "Définir la mise en page actuelle comme la mise en page de débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..mnSplitEditors..Caption
 #: frmPyIDEMain.dfm

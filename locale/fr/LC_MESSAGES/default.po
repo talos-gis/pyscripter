@@ -3195,7 +3195,7 @@ msgstr "Repliage du code"
 #. CommandsDataModule..actlMain..actFoldVisible..Hint
 #: dmCommands.dfm
 msgid "Show/Hide Code Folding"
-msgstr "Montrer/Caché le code replié"
+msgstr "Montrer/Cacher le code replié"
 
 #. CommandsDataModule..actlMain..actFoldAll..Caption
 #. CommandsDataModule..actlMain..actUnfoldAll..Caption

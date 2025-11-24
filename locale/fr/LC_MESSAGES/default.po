@@ -8314,7 +8314,7 @@ msgid ""
 " and debugger is not available."
 msgstr ""
 "Connexion au moteur Python distant impossible. La console de processus "
-"distant et le débuggeur ne sont pas accessibles."
+"distant et le débogueur ne sont pas accessibles."
 
 #. Programmer's name for it: SRemoteInterpreterInit
 #: StringResources.pas

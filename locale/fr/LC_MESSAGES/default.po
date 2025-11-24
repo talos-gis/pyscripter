@@ -5096,7 +5096,7 @@ msgstr "Ouvrir tous les nœuds du projet"
 #. ProjectExplorerWindow..ProjectActionList..actProjectCollapseAll..Hint
 #: frmProjectExplorer.dfm
 msgid "Collapse all project nodes"
-msgstr "Réduire tous les noeuds du projet"
+msgstr "Fermer tous les nœuds du projet"
 
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectAddFiles..Caption
 #: frmProjectExplorer.dfm

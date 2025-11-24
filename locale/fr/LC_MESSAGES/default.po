@@ -6773,7 +6773,7 @@ msgstr "Afficher les conseils de code"
 
 #: dmCommands.pas
 msgid "Show debugger hints"
-msgstr "Afficher les conseils de deboggage"
+msgstr "Afficher les conseils de débogage"
 
 #: dmCommands.pas
 msgid "Auto-complete brackets"

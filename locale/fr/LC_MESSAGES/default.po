@@ -3806,7 +3806,7 @@ msgstr "&Déboguer"
 #. Programmer's name for it: SDebugHint
 #: dmCommands.dfm StringResources.pas
 msgid "Debug|Debug active script"
-msgstr "Débugger|Débugger le script actif"
+msgstr "Déboguer|Déboguer le script actif"
 
 #. CommandsDataModule..actlMain..actRunToCursor..Caption
 #: dmCommands.dfm

@@ -5489,7 +5489,7 @@ msgstr "Barre d'outils principale"
 #. PyIDEMainForm..TBXDockTop..DebugToolbar..Caption
 #: frmPyIDEMain.dfm
 msgid "Debug Toolbar"
-msgstr "Barre d'outils de débuggage"
+msgstr "Barre d'outils de débogage"
 
 #. PyIDEMainForm..TBXDockTop..ViewToolbar..Caption
 #: frmPyIDEMain.dfm

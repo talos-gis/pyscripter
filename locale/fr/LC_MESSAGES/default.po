@@ -5423,7 +5423,7 @@ msgstr "Supprimer une mise en page"
 #. PyIDEMainForm..actlStandard..actLayoutDebug..Caption
 #: frmPyIDEMain.dfm
 msgid "Set Debug Layout"
-msgstr "Définir la mise en page du débuggage"
+msgstr "Définir la mise en page du débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..mnLayouts..TBXItem49..Hint
 #. PyIDEMainForm..actlStandard..actLayoutDebug..Hint

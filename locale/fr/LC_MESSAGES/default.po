@@ -4416,7 +4416,7 @@ msgstr "Interrompre l'outil en cours d'exécution (Dangereux)"
 #. Programmer's name for it: SDisassemblyTab
 #: frmDisassemlyView.dfm StringResources.pas
 msgid "Disassembly"
-msgstr "Desassembler"
+msgstr "Désassembler"
 
 #. DocForm..Caption
 #. Programmer's name for it: SyntaxElementFriendlyName_Documentation

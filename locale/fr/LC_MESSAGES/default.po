@@ -7171,7 +7171,7 @@ msgstr "Python non disponible"
 
 #: frmPyIDEMain.pas
 msgid "Debugger state: "
-msgstr "Etat du Débuggeur:"
+msgstr "Etat du Débogueur:"
 
 #: frmPyIDEMain.pas
 msgid "carets"

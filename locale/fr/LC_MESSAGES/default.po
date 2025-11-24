@@ -3130,12 +3130,12 @@ msgstr "Mettre en surbrillance le texte recherché dans l'éditeur actuel"
 #. CommandsDataModule..actlMain..actSearchGoToDebugLine..Caption
 #: dmCommands.dfm
 msgid "Go To &Debugger Position"
-msgstr "Aller à la position du &débugger"
+msgstr "Aller à la position du &débogueur"
 
 #. CommandsDataModule..actlMain..actSearchGoToDebugLine..Hint
 #: dmCommands.dfm
 msgid "Go to the current position of the debugger"
-msgstr "Aller à la position actuelle du débugger"
+msgstr "Aller à la position actuelle du débogueur"
 
 #. CommandsDataModule..actlMain..actHelpWebProjectHome..Caption
 #: dmCommands.dfm
@@ -3800,13 +3800,13 @@ msgstr "Exécuter|Exécuter le module actif"
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectDebug..Caption
 #: dmCommands.dfm frmProjectExplorer.dfm
 msgid "&Debug"
-msgstr "&Debugger"
+msgstr "&Déboguer"
 
 #. CommandsDataModule..actlMain..actDebug..Hint
 #. Programmer's name for it: SDebugHint
 #: dmCommands.dfm StringResources.pas
 msgid "Debug|Debug active script"
-msgstr "Débugger|Débugger le script actif"
+msgstr "Déboguer|Déboguer le script actif"
 
 #. CommandsDataModule..actlMain..actRunToCursor..Caption
 #: dmCommands.dfm
@@ -3861,12 +3861,12 @@ msgstr "Mettre en pause le programme en cours d'exécution"
 #. CommandsDataModule..actlMain..actDebugAbort..Caption
 #: dmCommands.dfm
 msgid "&Abort Debugging"
-msgstr "&Stopper le debuggage"
+msgstr "&Stopper le débogage"
 
 #. CommandsDataModule..actlMain..actDebugAbort..Hint
 #: dmCommands.dfm
 msgid "Abort debugging"
-msgstr "Stopper le débuggage"
+msgstr "Stopper le débogage"
 
 #. CommandsDataModule..actlMain..actExternalRun..Caption
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectExternalRun..Caption
@@ -3906,13 +3906,13 @@ msgstr "Exécuter le dernier script"
 #. CommandsDataModule..actlMain..actDebugLastScript..Caption
 #: dmCommands.dfm
 msgid "Debug Last Script"
-msgstr "Débugger le dernier Script"
+msgstr "Déboguer le Dernier Script"
 
 #. CommandsDataModule..actlMain..actDebugLastScript..Hint
 #. Programmer's name for it: SHintDebug
 #: dmCommands.dfm StringResources.pas
 msgid "Debug last script"
-msgstr "Débugger le dernier script"
+msgstr "Déboguer le dernier script"
 
 #. CommandsDataModule..actlMain..actExternalRunLastScript..Caption
 #: dmCommands.dfm
@@ -4892,7 +4892,7 @@ msgstr "Configurer la police"
 #. FunctionListWindow..Actions..actViewStart..Caption
 #: frmFunctionList.dfm
 msgid "S&tart"
-msgstr "Démar&rer"
+msgstr "Déma&rrer"
 
 #. FunctionListWindow..Actions..actViewStart..Hint
 #: frmFunctionList.dfm
@@ -5066,7 +5066,7 @@ msgstr "Barre d'outils de l'explorateur de projets"
 #. ProjectExplorerWindow..ProjectActionList..actProjectRelativePaths..Caption
 #: frmProjectExplorer.dfm
 msgid "Store &Relative Paths"
-msgstr "Stocker les chemins &relatif"
+msgstr "Stocker les chemins &relatifs"
 
 #. ProjectExplorerWindow..ProjectActionList..actProjectRelativePaths..Hint
 #: frmProjectExplorer.dfm
@@ -5076,7 +5076,7 @@ msgstr "Stocker les chemins de fichiers relativement au répertoire du projet"
 #. ProjectExplorerWindow..ProjectActionList..actProjectShowFileExtensions..Caption
 #: frmProjectExplorer.dfm
 msgid "Show File &Extensions"
-msgstr "Montrer les fichiers &extensions"
+msgstr "Montrer les &extensions de fichiers"
 
 #. ProjectExplorerWindow..ProjectActionList..actProjectShowFileExtensions..Hint
 #: frmProjectExplorer.dfm
@@ -5091,12 +5091,12 @@ msgstr "Chemin &Python supplémentaire..."
 #. ProjectExplorerWindow..ProjectActionList..actProjectExpandAll..Hint
 #: frmProjectExplorer.dfm
 msgid "Expand all project nodes"
-msgstr "Développer tous les noeuds de projet"
+msgstr "Ouvrir tous les nœuds du projet"
 
 #. ProjectExplorerWindow..ProjectActionList..actProjectCollapseAll..Hint
 #: frmProjectExplorer.dfm
 msgid "Collapse all project nodes"
-msgstr "Réduire tous les noeuds du projet"
+msgstr "Fermer tous les nœuds du projet"
 
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectAddFiles..Caption
 #: frmProjectExplorer.dfm
@@ -5197,7 +5197,7 @@ msgstr "Configuration d'exécution utilisant une console Python externe"
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectDebug..Hint
 #: frmProjectExplorer.dfm
 msgid "Debug the selected configuration"
-msgstr "Débugger la configuration sélectionnée"
+msgstr "Déboguer la configuration sélectionnée"
 
 #. ProjectExplorerWindow..ImmutableProjectActionList..actProjectAddRemoteFile..Caption
 #. Programmer's name for it: SRemoteFileAdd
@@ -5307,7 +5307,7 @@ msgstr "IDE &Windows"
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..sbmnNavigate..sbmnDebugWindows..Caption
 #: frmPyIDEMain.dfm
 msgid "&Debug Windows"
-msgstr "&Fenêtre de Débuggage"
+msgstr "Fenêtre de &Débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..sbmnViewEditor..mnSyntax..Caption
 #: frmPyIDEMain.dfm
@@ -5343,13 +5343,13 @@ msgstr ""
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..mnuToolbars..mnDebugtoolbarVisibilityToggle..Caption
 #: frmPyIDEMain.dfm
 msgid "&Debug Toolbar"
-msgstr "&Barre d'outils de débuggage"
+msgstr "&Barre d'outils de débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..mnuToolbars..mnDebugtoolbarVisibilityToggle..Hint
 #: frmPyIDEMain.dfm
 msgid "Debug toolbar|Show/Hide the Debug toolbar"
 msgstr ""
-"Barre d'outils de débuggage|Afficher/Cacher la barre d'outils de débuggage"
+"Barre d'outils de débogage|Afficher/Cacher la barre d'outils de débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..mnuToolbars..mnEditorToolbarVisibilityToggle..Caption
 #: frmPyIDEMain.dfm
@@ -5423,13 +5423,13 @@ msgstr "Supprimer une mise en page"
 #. PyIDEMainForm..actlStandard..actLayoutDebug..Caption
 #: frmPyIDEMain.dfm
 msgid "Set Debug Layout"
-msgstr "Définir la mise en page du débuggage"
+msgstr "Définir la mise en page du débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..mnLayouts..TBXItem49..Hint
 #. PyIDEMainForm..actlStandard..actLayoutDebug..Hint
 #: frmPyIDEMain.dfm
 msgid "Set the current layout as the debug layout"
-msgstr "Définir la mise en page actuelle comme la mise en page de débuggage"
+msgstr "Définir la mise en page actuelle comme la mise en page de débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..mnSplitEditors..Caption
 #: frmPyIDEMain.dfm
@@ -5489,7 +5489,7 @@ msgstr "Barre d'outils principale"
 #. PyIDEMainForm..TBXDockTop..DebugToolbar..Caption
 #: frmPyIDEMain.dfm
 msgid "Debug Toolbar"
-msgstr "Barre d'outils de débuggage"
+msgstr "Barre d'outils de débogage"
 
 #. PyIDEMainForm..TBXDockTop..ViewToolbar..Caption
 #: frmPyIDEMain.dfm
@@ -6773,7 +6773,7 @@ msgstr "Afficher les conseils de code"
 
 #: dmCommands.pas
 msgid "Show debugger hints"
-msgstr "Afficher les conseils de deboggage"
+msgstr "Afficher les conseils de débogage"
 
 #: dmCommands.pas
 msgid "Auto-complete brackets"
@@ -7020,7 +7020,7 @@ msgstr "Nouveau nom"
 
 #: dmCommands.pas
 msgid "Debug"
-msgstr "Débugger"
+msgstr "Déboguer"
 
 #: dmCommands.pas
 msgid "Downloading..."
@@ -7171,7 +7171,7 @@ msgstr "Python non disponible"
 
 #: frmPyIDEMain.pas
 msgid "Debugger state: "
-msgstr "Etat du Débuggeur:"
+msgstr "Etat du Débogueur:"
 
 #: frmPyIDEMain.pas
 msgid "carets"
@@ -8267,7 +8267,7 @@ msgid ""
 "programs"
 msgstr ""
 "Vous ne pouvez pas compiler, importer ou exécuter un modules lorsque qu'un "
-"programme est en cours d'exécution en mode normal ou en mode débuggage"
+"programme est en cours d'exécution en mode normal ou en mode débogage"
 
 #. Programmer's name for it: SErrorInImportingModule
 #: StringResources.pas
@@ -8314,7 +8314,7 @@ msgid ""
 " and debugger is not available."
 msgstr ""
 "Connexion au moteur Python distant impossible. La console de processus "
-"distant et le débuggeur ne sont pas accessibles."
+"distant et le débogueur ne sont pas accessibles."
 
 #. Programmer's name for it: SRemoteInterpreterInit
 #: StringResources.pas
@@ -8505,7 +8505,7 @@ msgstr "Exécution de Script OK"
 #. Programmer's name for it: SDebuggingAborted
 #: StringResources.pas
 msgid "Debugging Aborted"
-msgstr "Stopper le débuggage"
+msgstr "Stopper le débogage"
 
 #. Programmer's name for it: StrCertainty
 #: StringResources.pas
@@ -9324,7 +9324,7 @@ msgstr "Projet"
 #. Programmer's name for it: SActionCategoryDebugWindows
 #: StringResources.pas
 msgid "Debug Windows"
-msgstr "Fenêtre de débuggage"
+msgstr "Fenêtre de débogage"
 
 #. Programmer's name for it: SActionCategoryIDENavigation
 #: StringResources.pas

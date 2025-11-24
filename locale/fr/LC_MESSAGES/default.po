@@ -4244,7 +4244,7 @@ msgstr "Co&pier dans le presse-papier"
 #. WatchesWindow..TBXPopupMenu..mnCopyToClipboard..Hint
 #: frmBreakPoints.dfm frmWatches.dfm
 msgid "Copy to clipboard"
-msgstr "Copier dans le presse-papiers"
+msgstr "Copier dans le presse-papier"
 
 #. CallStackWindow..Caption
 #: frmCallStack.dfm

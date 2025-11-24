@@ -3130,7 +3130,7 @@ msgstr "Mettre en surbrillance le texte recherché dans l'éditeur actuel"
 #. CommandsDataModule..actlMain..actSearchGoToDebugLine..Caption
 #: dmCommands.dfm
 msgid "Go To &Debugger Position"
-msgstr "Aller à la position du &débugger"
+msgstr "Aller à la position du &débogueur"
 
 #. CommandsDataModule..actlMain..actSearchGoToDebugLine..Hint
 #: dmCommands.dfm

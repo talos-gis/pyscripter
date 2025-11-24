@@ -5066,7 +5066,7 @@ msgstr "Barre d'outils de l'explorateur de projets"
 #. ProjectExplorerWindow..ProjectActionList..actProjectRelativePaths..Caption
 #: frmProjectExplorer.dfm
 msgid "Store &Relative Paths"
-msgstr "Stocker les chemins &relatif"
+msgstr "Stocker les chemins &relatifs"
 
 #. ProjectExplorerWindow..ProjectActionList..actProjectRelativePaths..Hint
 #: frmProjectExplorer.dfm

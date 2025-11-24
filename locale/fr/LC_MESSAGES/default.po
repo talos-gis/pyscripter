@@ -5349,7 +5349,7 @@ msgstr "&Barre d'outils de débogage"
 #: frmPyIDEMain.dfm
 msgid "Debug toolbar|Show/Hide the Debug toolbar"
 msgstr ""
-"Barre d'outils de débuggage|Afficher/Cacher la barre d'outils de débuggage"
+"Barre d'outils de débogage|Afficher/Cacher la barre d'outils de débogage"
 
 #. PyIDEMainForm..TBXDockTop..MainMenu..ViewMenu..mnuToolbars..mnEditorToolbarVisibilityToggle..Caption
 #: frmPyIDEMain.dfm

@@ -1258,10 +1258,7 @@ const
   end;
 
 begin
-  var GlobalPaths := TStringList.Create;
-  SafePyEngine.PythonEngine.GetPythonPathAsStrings(GlobalPaths, wppOnlyCustom);
-  var Paths := GlobalPaths.ToStringArray;
-  GlobalPaths.Free;
+  var Paths := SafePyEngine.PythonEngine.GetPythonPathAsStrings(wppOnlyCustom);
 
   ClientCapabilities(Params.capabilities);
   if Length(Paths) > 0 then

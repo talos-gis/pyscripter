@@ -189,7 +189,8 @@ uses
   cPySupportTypes,
   cCodeCompletion,
   cPyScripterSettings,
-  cSSHSupport;
+  cSSHSupport,
+  PythonEngine;
 
 {$REGION 'Utility functions'}
 
@@ -1247,9 +1248,9 @@ const
     Result := string.Join(',', Arr);
   end;
 
-  function ExtraPaths: string;
+  function ExtraPaths(Paths: TArray<string>): string;
   begin
-    var Paths := Copy(FProjectPythonPath);
+    Paths := Copy(Paths);
     for var I := Low(Paths) to High(Paths) do
       Paths[I] := '"' + Paths[I] + '"';
     Result := string.Join(',', Paths);
@@ -1257,11 +1258,16 @@ const
   end;
 
 begin
+  var GlobalPaths := TStringList.Create;
+  SafePyEngine.PythonEngine.GetPythonPathAsStrings(GlobalPaths, wppOnlyCustom);
+  var Paths := GlobalPaths.ToStringArray;
+  GlobalPaths.Free;
+
   ClientCapabilities(Params.capabilities);
-  if Length(FProjectPythonPath) > 0 then
+  if Length(Paths) > 0 then
   begin
-    Params.AddWorkspaceFolders(FProjectPythonPath);
-    Params.AddRoot(FProjectPythonPath[0]);
+    Params.AddWorkspaceFolders(Paths);
+    Params.AddRoot(Paths[0]);
   end;
   if PyIDEOptions.LspDebug then
     Params.trace := 'verbose';
@@ -1269,7 +1275,7 @@ begin
     Format(InitializationOptionsLsp,
     [QuotePackages(PyIDEOptions.SpecialPackages),
      BoolToStr(not PyIDEOptions.CodeCompletionCaseSensitive, True).ToLower,
-     ExtraPaths]);
+     ExtraPaths(Paths)]);
 end;
 
 {$ENDREGION 'TJediClient'}

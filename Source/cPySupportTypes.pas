@@ -45,6 +45,7 @@ type
   // Notification messages
   TPythonVersionChangeMessage = class(System.Messaging.TMessage);
   TProjectPythonPathChangeMessage = class(System.Messaging.TMessage<TArray<string>>);
+  TGlobalPythonPathChangeMessage = class(System.Messaging.TMessage<TArray<string>>);
 
 const
   // Defined DebugIDE events

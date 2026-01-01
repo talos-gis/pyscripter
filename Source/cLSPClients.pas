@@ -35,10 +35,14 @@ type
   private
     FLspClient: TLSPClient;
     class var FProjectPythonPath: TArray<string>;
+    class var FGlobalPythonPath: TArray<string>;
     class procedure PythonVersionChanged(const Sender: TObject;
       const Msg: System.Messaging.TMessage);
     class procedure ProjectPythonPathChanged(const Sender: TObject;
       const Msg: System.Messaging.TMessage);
+    class procedure GlobalPythonPathChanged(const Sender:
+      TObject; const Msg: System.Messaging.TMessage);
+    class procedure PythonPathChanged(NewPath: TArray<string>; OldPath: TArray<string>);
   protected
     procedure ClientCapabilities(Capabilities: TLSPClientCapabilities);
     procedure CreateServer; virtual;
@@ -189,7 +193,8 @@ uses
   cPySupportTypes,
   cCodeCompletion,
   cPyScripterSettings,
-  cSSHSupport;
+  cSSHSupport,
+  PythonEngine;
 
 {$REGION 'Utility functions'}
 
@@ -535,6 +540,8 @@ begin
   // Notifications
   TMessageManager.DefaultManager.SubscribeToMessage(TPythonVersionChangeMessage,
     PythonVersionChanged);
+  TMessageManager.DefaultManager.SubscribeToMessage(TGlobalPythonPathChangeMessage,
+    GlobalPythonPathChanged);
   TMessageManager.DefaultManager.SubscribeToMessage(TProjectPythonPathChangeMessage,
     ProjectPythonPathChanged);
 end;
@@ -587,6 +594,8 @@ class destructor TPyLspClient.Destroy;
 begin
   TMessageManager.DefaultManager.Unsubscribe(TPythonVersionChangeMessage,
     PythonVersionChanged);
+  TMessageManager.DefaultManager.Unsubscribe(TGlobalPythonPathChangeMessage,
+    GlobalPythonPathChanged);
   TMessageManager.DefaultManager.Unsubscribe(TProjectPythonPathChangeMessage,
     ProjectPythonPathChanged);
 
@@ -1036,13 +1045,26 @@ class procedure TPyLspClient.ProjectPythonPathChanged(const Sender:
     TObject; const Msg: System.Messaging.TMessage);
 begin
   var NewPath := TProjectPythonPathChangeMessage(Msg).Value;
+  Self.PythonPathChanged(NewPath, FProjectPythonPath);
+  FProjectPythonPath := NewPath;
+end;
 
+class procedure TPyLspClient.GlobalPythonPathChanged(const Sender:
+    TObject; const Msg: System.Messaging.TMessage);
+begin
+  var NewPath := TGlobalPythonPathChangeMessage(Msg).Value;
+  Self.PythonPathChanged(NewPath, FGlobalPythonPath);
+  FProjectPythonPath := NewPath;
+end;
+
+class procedure TPyLspClient.PythonPathChanged(NewPath: TArray<string>; OldPath: TArray<string>);
+begin
   var Params := TSmartPtr.Make(TLSPDidChangeWorkspaceFoldersParams.Create)();
   Params.event := Default(TLSPWorkspaceFoldersChangeEvent);
   var Comparer: IComparer<string> := TIStringComparer.Ordinal;
 
   // Remove old entries
-  for var Item in FProjectPythonPath do
+  for var Item in OldPath do
     if not TArray.Contains<string>(NewPath, Item, Comparer) then
     begin
       var Folder := Default(TLSPWorkspaceFolder);
@@ -1051,15 +1073,13 @@ begin
       Params.event.removed := Params.event.removed + [Folder];
     end;
   for var Item in NewPath do
-    if not TArray.Contains<string>(FProjectPythonPath, Item, Comparer) then
+    if not TArray.Contains<string>(OldPath, Item, Comparer) then
     begin
       var Folder := Default(TLSPWorkspaceFolder);
       Folder.uri := FilePathToURI(Item);
       Folder.name := TPath.GetFileNameWithoutExtension(Item);
       Params.event.added := Params.event.added + [Folder];
     end;
-
-  FProjectPythonPath := NewPath;
 
   if (Length(Params.event.removed) > 0) or (Length(Params.event.added) > 0) then begin
     for var Client in LspClients do
@@ -1069,6 +1089,7 @@ begin
         Client.FLspClient.SendNotification(lspDidChangeWorkspaceFolders, Params);
     RestartServers;
   end;
+  OldPath := NewPath;
 end;
 
 class procedure TPyLspClient.PythonVersionChanged(const Sender: TObject; const
@@ -1247,9 +1268,9 @@ const
     Result := string.Join(',', Arr);
   end;
 
-  function ExtraPaths: string;
+  function ExtraPaths(Paths: TArray<string>): string;
   begin
-    var Paths := Copy(FProjectPythonPath);
+    Paths := Copy(Paths);
     for var I := Low(Paths) to High(Paths) do
       Paths[I] := '"' + Paths[I] + '"';
     Result := string.Join(',', Paths);
@@ -1258,10 +1279,18 @@ const
 
 begin
   ClientCapabilities(Params.capabilities);
-  if Length(FProjectPythonPath) > 0 then
+
+  var Py := SafePyEngine;
+  var GlobalPaths := TStringList.Create;
+  Py.PythonEngine.GetPythonPathAsStrings(GlobalPaths, wppOnlyCustom);
+  var AllPaths := GlobalPaths.ToStringArray;
+
+
+  var Paths := Copy(FProjectPythonPath);
+  if Length(Paths) > 0 then
   begin
-    Params.AddWorkspaceFolders(FProjectPythonPath);
-    Params.AddRoot(FProjectPythonPath[0]);
+    Params.AddWorkspaceFolders(Paths);
+    Params.AddRoot(Paths[0]);
   end;
   if PyIDEOptions.LspDebug then
     Params.trace := 'verbose';
@@ -1269,7 +1298,7 @@ begin
     Format(InitializationOptionsLsp,
     [QuotePackages(PyIDEOptions.SpecialPackages),
      BoolToStr(not PyIDEOptions.CodeCompletionCaseSensitive, True).ToLower,
-     ExtraPaths]);
+     ExtraPaths(AllPaths)]);
 end;
 
 {$ENDREGION 'TJediClient'}
@@ -1312,6 +1341,8 @@ const
 '}';
 begin
   ClientCapabilities(Params.capabilities);
+  if Length(FGlobalPythonPath) > 0 then
+    Params.AddWorkspaceFolders(FGlobalPythonPath);
   if Length(FProjectPythonPath) > 0 then
     Params.AddWorkspaceFolders(FProjectPythonPath);
   if PyIDEOptions.LspDebug then

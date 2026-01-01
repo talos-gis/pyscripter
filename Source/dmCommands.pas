@@ -1689,6 +1689,8 @@ begin
     if EditFolderList(Paths, _('Python Path'), 870) then
       if not PathsCurrent.Equals(Paths) then begin
         GI_PyControl.ActiveInterpreter.StringsToSysPath(Paths);
+//        TMessageManager.DefaultManager.SendMessage(Self,
+//          TGlobalPythonPathChangeMessage.Create(Paths.ToStringArray));
         TPyLspClient.RestartServers;
       end;
   finally

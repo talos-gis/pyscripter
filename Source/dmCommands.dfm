@@ -1,8 +1,9 @@
 object CommandsDataModule: TCommandsDataModule
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 280
-  Width = 509
+  Height = 560
+  Width = 1018
+  PixelsPerInch = 192
   object SynEditPrint: TSynEditPrint
     Copies = 1
     Header.DefaultFont.Charset = DEFAULT_CHARSET
@@ -32,16 +33,16 @@ object CommandsDataModule: TCommandsDataModule
     Font.Style = []
     TabWidth = 8
     Color = clWhite
-    Left = 244
-    Top = 68
+    Left = 488
+    Top = 136
   end
   object SynEditSearch: TSynEditSearch
-    Left = 147
-    Top = 67
+    Left = 294
+    Top = 134
   end
   object SynEditRegexSearch: TSynEditRegexSearch
-    Left = 41
-    Top = 68
+    Left = 82
+    Top = 136
   end
   object ProgramVersionCheck: TJvProgramVersionCheck
     AllowedReleaseType = prtAlpha
@@ -66,21 +67,21 @@ object CommandsDataModule: TCommandsDataModule
     VersionHistoryFileOptions.XMLOptions.UseOldItemNameFormat = False
     VersionHistoryFileOptions.XMLOptions.WhiteSpaceReplacement = '_'
     VersionHistoryFileOptions.XMLOptions.InvalidCharReplacement = '_'
-    Left = 51
-    Top = 7
+    Left = 102
+    Top = 14
   end
   object ProgramVersionHTTPLocation: TJvProgramVersionHTTPLocation
     OnLoadFileFromRemote = ProgramVersionHTTPLocationLoadFileFromRemote
     VersionInfoLocationPathList.Strings = (
       'https://raw.githubusercontent.com/pyscripter/pyscripter/master')
     VersionInfoFileName = 'PyScripterVersionInfo.ini'
-    Left = 206
-    Top = 8
+    Left = 412
+    Top = 16
   end
   object actlMain: TActionList
     Images = PyIDEMainForm.vilImages
-    Left = 13
-    Top = 165
+    Left = 26
+    Top = 330
     object actFileSave: TAction
       Category = 'File'
       Caption = '&Save'
@@ -1797,8 +1798,8 @@ object CommandsDataModule: TCommandsDataModule
       end>
     Resizeable = True
     ShortCut = 0
-    Left = 380
-    Top = 104
+    Left = 760
+    Top = 208
   end
   object SynParamCompletion: TSynCompletionProposal
     DefaultType = ctParams
@@ -1823,8 +1824,8 @@ object CommandsDataModule: TCommandsDataModule
     Columns = <>
     ShortCut = 0
     TimerInterval = 300
-    Left = 380
-    Top = 63
+    Left = 760
+    Top = 126
   end
   object SynCodeCompletion: TSynCompletionProposal
     Options = [scoCaseSensitive, scoLimitToMatchedText, scoUseInsertList, scoUsePrettyText, scoEndCharCompletion, scoConsiderWordBreakChars, scoCompleteWithTab, scoCompleteWithEnter]
@@ -1850,8 +1851,8 @@ object CommandsDataModule: TCommandsDataModule
     Resizeable = True
     ShortCut = 0
     TimerInterval = 300
-    Left = 380
-    Top = 17
+    Left = 760
+    Top = 34
   end
   object SynSpellCheck: TSynSpellCheck
     AttributesChecked.Strings = (
@@ -1861,12 +1862,12 @@ object CommandsDataModule: TCommandsDataModule
       'Documentation')
     CheckAsYouType = False
     OnChange = SynSpellCheckChange
-    Left = 384
-    Top = 168
+    Left = 768
+    Top = 336
   end
   object pmSpelling: TSpTBXPopupMenu
-    Left = 90
-    Top = 164
+    Left = 180
+    Top = 328
     object mnSpelling: TSpTBXSubmenuItem
       Caption = 'Spelling'
       OnPopup = mnSpellingPopup
@@ -1912,8 +1913,8 @@ object CommandsDataModule: TCommandsDataModule
   end
   object pmAssistant: TSpTBXPopupMenu
     Images = PyIDEMainForm.vilImages
-    Left = 168
-    Top = 164
+    Left = 336
+    Top = 328
     object spiAssistant: TSpTBXSubmenuItem
       Caption = 'Assistant'
       object spiSuggest: TSpTBXItem

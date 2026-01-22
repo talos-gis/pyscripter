@@ -1377,6 +1377,7 @@ type
     function TabControlIndex(TabControl: TSpTBXCustomTabControl): Integer;
     property ActiveTabControl: TSpTBXCustomTabControl read GetActiveTabControl
       write SetActiveTabControl;
+    property IsClosing: Boolean read FIsClosing;
   end;
 
 const

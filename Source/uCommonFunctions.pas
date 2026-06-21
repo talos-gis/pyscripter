@@ -369,7 +369,8 @@ uses
   PythonEngine,
   StringResources,
   uEditAppIntfs,
-  uPythonItfs;
+  uPythonItfs,
+  cAppPaths;
 
 function GetIconIndexFromFile(const AFileName: string;
   const ASmall: Boolean): Integer;
@@ -493,6 +494,10 @@ function ApplicationVersion: string;
 var
   ExeFile: string;
 begin
+  if PyScripterIsEmbedded then begin
+    Result := PyScripterVersion;
+    exit;
+  end;
   ExeFile := Application.ExeName;
   if VersionResourceAvailable(ExeFile) then begin
     with TJclFileVersionInfo.Create(ExeFile) do begin
